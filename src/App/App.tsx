@@ -8,13 +8,13 @@ const App = () => {
   const [selectedTask, setSelectedTask] = React.useState(null);
 
   return (
-    <div className="ToDoApp">
+    <>
       <ToDoHeader />
-      <div className="ToDoApp-layout">
-        <ToDoList className="ToDoApp-list" />
-        <ToDoDetail selectedTask={selectedTask} className="git stToDoApp-detail" />
+      <div className="ToDoApp">
+        <ToDoList className="ToDoApp-column" />
+        <ToDoDetail selectedTask={selectedTask} className="ToDoApp-column" />
       </div>
-    </div>
+    </>
   );
 }
 

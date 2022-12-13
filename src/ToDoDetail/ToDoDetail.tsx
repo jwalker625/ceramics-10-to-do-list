@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import './ToDoDetail.css';
 
 type ToDoDetailProps = {
   isNewTask?: boolean,
