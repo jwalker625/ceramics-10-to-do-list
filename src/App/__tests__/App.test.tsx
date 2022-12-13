@@ -20,17 +20,28 @@ describe('App Integration Tests', () => {
     expect(toDoListElement).toBeInTheDocument();
   });
 
-  it('opens the Add New Task form when the add new task button is clicked', async () => {
-    const user = userEvent.setup();
-    render(<App/>);
+  describe('Detail Card', () => {
+    it('does not render when no task is selected', async () => {
+      const user = userEvent.setup();
+      render(<App/>);
 
-    const addNewTaskButton = await screen.findByRole('button', { name: '+ New Task' });
-    await user.click(addNewTaskButton);
+      const addNewTaskForm = screen.queryByText(/Add New Task/i);
 
-    const addNewTaskForm = await screen.findByText(/Add New Task/i);
-
-    expect(addNewTaskForm).toBeInTheDocument();
+      expect(addNewTaskForm).not.toBeInTheDocument();
+    });
   });
+
+  // it('opens the Add New Task form when the add new task button is clicked', async () => {
+  //   const user = userEvent.setup();
+  //   render(<App />);
+  //
+  //   const addNewTaskButton = await screen.findByRole('button', { name: '+ New Task' });
+  //   await user.click(addNewTaskButton);
+  //
+  //   const addNewTaskForm = await screen.findByText(/Add New Task/i);
+  //
+  //   expect(addNewTaskForm).toBeInTheDocument();
+  // });
 
   // it('renders the detail card when a to-do list item is selected', () => {
   //
