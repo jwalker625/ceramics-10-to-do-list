@@ -11,29 +11,39 @@ type ToDoDetailProps = {
   } | null
 } & React.ComponentProps<'div'>;
 
+const ToDoDetailContainer = (props: React.ComponentProps<'div'>) => {
+  const { className, children, ...otherProps } = props;
+
+  return (
+    <div {...otherProps} className={classNames(className, "ToDoDetail")}>
+      {children}
+    </div>
+  );
+}
+
 const ToDoDetail = (props: ToDoDetailProps) => {
   const { isNewTask, selectedTask, className, ...otherProps } = props;
 
   if(isNewTask) {
     return (
-      <div {...otherProps} className={classNames(className, "ToDoDetail")}>
+      <ToDoDetailContainer {...otherProps}>
         <h2>Add New Task</h2>
-      </div>
+      </ToDoDetailContainer>
     );
   }
 
   if(!selectedTask) {
     return (
-      <div {...otherProps} className={classNames(className, "ToDoDetail")}>
+      <ToDoDetailContainer {...otherProps}>
         <h2>Get Started</h2>
-      </div>
+      </ToDoDetailContainer>
     );
   }
 
   return (
-    <div {...otherProps} className={classNames(className, "ToDoDetail")}>
+    <ToDoDetailContainer {...otherProps}>
       <h2>Add New Task</h2>
-    </div>
+    </ToDoDetailContainer>
   );
 }
 
