@@ -9,7 +9,7 @@ const ToDoList = (props: ToDoListProps) => {
 
   return (
     <div {...otherProps} className={classNames(className, "ToDoList")}>
-      <h2 data-testid="to-do-list">To-Do List</h2>
+      <h2>To-Do List</h2>
       <button>+ New Task</button>
     </div>
   );
