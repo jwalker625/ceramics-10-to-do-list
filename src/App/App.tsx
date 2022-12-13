@@ -5,14 +5,14 @@ import ToDoList from '../ToDoList';
 import ToDoDetail from '../ToDoDetail';
 
 const App = () => {
-  const [selectedTask, setSelectedTask] = React.useState('');
+  const [selectedTask, setSelectedTask] = React.useState(null);
 
   return (
     <div className="ToDoApp">
       <ToDoHeader />
       <div className="ToDoApp-layout">
-        <ToDoList />
-        <ToDoDetail selectedTask={selectedTask} />
+        <ToDoList className="ToDoApp-list" />
+        <ToDoDetail selectedTask={selectedTask} className="git stToDoApp-detail" />
       </div>
     </div>
   );
