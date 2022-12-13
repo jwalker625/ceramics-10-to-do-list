@@ -1,0 +1,43 @@
+
+:root {
+  /* All colors from https://paletton.com/#uid=72N0L0kllll52NHdbtNtvcTLU4s */
+  /* primary colors */
+  --green-color-1: #CAECC7;
+  --green-color-2: #7AC272;
+  --green-color-3: #378B2E;
+  --green-color-4: #0E5407;
+  --green-color-5: #031D00;
+
+  /* secondary color #1 */
+  --blue-color-1: #BACBD9;
+  --blue-color-2: #5E7F99;
+  --blue-color-3: #2A4F6E;
+  --blue-color-4: #092842;
+  --blue-color-5: #010D17;
+
+  /* secondary color #2 */
+  --brown-color-1: #FFEED7;
+  --brown-color-2: #EDC48C;
+  --brown-color-3: #AA7A39;
+  --brown-color-4: #673F08;
+  --brown-color-5: #231400;
+
+  /* complement color */
+  --red-color-1: #FDD5D7;
+  --red-color-2: #E9898E;
+  --red-color-3: #A7383D;
+  --red-color-4: #65080D;
+  --red-color-5: #230002;
+
+  /* Spacing */
+  --spacing-0: 4px;
+  --spacing-1: 8px;
+  --spacing-2: 12px;
+  --spacing-3: 16px;
+  --spacing-4: 20px;
+  --spacing-5: 24px;
+  --spacing-6: 28px;
+  --spacing-7: 32px;
+  --spacing-8: 36px;
+  --spacing-9: 40px;
+}
