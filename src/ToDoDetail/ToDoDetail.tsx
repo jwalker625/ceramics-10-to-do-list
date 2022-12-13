@@ -8,7 +8,7 @@ type ToDoDetailProps = {
     title: string,
     description: string,
     deadline?: Date
-  } | null
+  } | undefined
 } & React.ComponentProps<'div'>;
 
 const ToDoDetailContainer = (props: React.ComponentProps<'div'>) => {

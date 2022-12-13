@@ -5,7 +5,7 @@ import ToDoList from '../ToDoList';
 import ToDoDetail from '../ToDoDetail';
 
 const App = () => {
-  const [selectedTask, setSelectedTask] = React.useState(null);
+  const [selectedTask, setSelectedTask] = React.useState();
 
   return (
     <div className="ToDoAppContent">
