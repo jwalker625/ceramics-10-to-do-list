@@ -5,6 +5,7 @@
   flex-direction: column;
   text-align: center;
   padding: var(--subtitle-size);
+  width: 100%;
 
   background-color: var(--blue-color-4);
   border-bottom: var(--spacing-0) solid var(--brown-color-2);
