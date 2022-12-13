@@ -7,7 +7,7 @@ const ToDoHeader = () => {
     <header className="ToDoHeader">
       <h1 className="ToDoHeader-title">To Do App</h1>
       <h4 className="ToDoHeader-subtitle">
-        Created with <img src="../../public/vite.svg" /> Vite +{' '}
+        Created with <img src="./vite.svg" /> Vite +{' '}
         <img src={reactLogo} /> React +{' '}
         <img src={typescriptLogo} /> TypeScript
       </h4>

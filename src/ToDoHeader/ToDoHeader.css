@@ -1,24 +1,18 @@
 .ToDoHeader {
+  --subtitle-size: var(--spacing-3);
+
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 5px;
+  padding: var(--subtitle-size);
+
   background-color: var(--blue-color-4);
   border-bottom: var(--spacing-0) solid var(--brown-color-2);
-  min-height: 100px;
-
-  --subtitle-size: var(--spacing-3);
 }
 
 .ToDoHeader-title {
-  margin: var(--spacing-3) 0;
   color: var(--green-color-1);
-}
-
-.ToDoHeader-subtitle {
-  margin: 0 0 var(--subtitle-size) 0;
-  line-height: var(--subtitle-size);
-  font-size: var(--subtitle-size);
+  margin-bottom: var(--subtitle-size);
 }
 
 .ToDoHeader-subtitle > img {
