@@ -1,0 +1,9 @@
+.ToDoHeader {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: var(--spacing-3);
+  padding: 5px;
+  background-color: var(--blue-color-4);
+  border-bottom: var(--spacing-0) solid var(--brown-color-2);
+}
