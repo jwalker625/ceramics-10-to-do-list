@@ -1,0 +1,22 @@
+.ToDoHeader {
+  --subtitle-size: var(--spacing-3);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: var(--subtitle-size);
+
+  background-color: var(--blue-color-4);
+  border-bottom: var(--spacing-0) solid var(--brown-color-2);
+}
+
+.ToDoHeader-title {
+  color: var(--green-color-1);
+  margin-bottom: var(--subtitle-size);
+}
+
+.ToDoHeader-subtitle > img {
+  height: var(--subtitle-size);
+  width: var(--subtitle-size);
+  vertical-align: text-top;
+}

@@ -1,9 +1,10 @@
 import './App.css';
+import ToDoHeader from '../ToDoHeader';
 
 const App = () => {
   return (
     <div className="ToDoApp">
-      <h1>To Do List</h1>
+      <ToDoHeader />
     </div>
   );
 }
