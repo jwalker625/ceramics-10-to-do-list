@@ -1,0 +1,19 @@
+.ToDoAppContent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.ToDoAppContent-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ToDoAppContent-column {
+  margin: var(--spacing-2);
+  flex: 1;
+}
