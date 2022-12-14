@@ -1,6 +1,6 @@
 import ToDoDetail from '../ToDoDetail';
 import { describe, it, expect } from 'vitest';
-import { render, screen, waitForElementToBeRemoved, within } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import * as MockDate from "mockdate";
 import userEvent from "@testing-library/user-event";
 
@@ -50,8 +50,8 @@ describe('ToDoDetail', () => {
       expect(taskDetailElement).toHaveTextContent(selectedTask.description);
     });
 
-    it('renders the task deadline when it receives none', async () => {
-      MockDate.set(new Date());
+    it('renders the task deadline when it receives a selectedTask with a deadline', async () => {
+      MockDate.set(new Date(2022, 11, 20));
       const selectedTask = {
         title: 'Test Task',
         deadline: new Date(2023, 0, 1, 12, 30)

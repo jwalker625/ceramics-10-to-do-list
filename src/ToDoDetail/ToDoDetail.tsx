@@ -12,7 +12,7 @@ type ToDoDetailProps = {
   }
 } & React.ComponentProps<'div'>;
 
-type ToDoDetailTasContentProps = {
+type ToDoDetailTaskContentProps = {
   selectedTask: {
     title: string,
     description?: string,
@@ -31,7 +31,7 @@ const ToDoDetailContainer = (props: React.ComponentProps<'div'>) => {
   );
 }
 
-const ToDoDetailTaskContent = (props: ToDoDetailTasContentProps) => {
+const ToDoDetailTaskContent = (props: ToDoDetailTaskContentProps) => {
   const { className, selectedTask, handleOnEditClick, ...otherProps } = props;
 
   const formattedDeadline = selectedTask.deadline ? format(selectedTask.deadline, "h':'mmaaa 'on' MMM d',' y") : '';
@@ -75,7 +75,11 @@ const ToDoDetail = (props: ToDoDetailProps) => {
 
   return (
     <ToDoDetailContainer data-testid="to-do-detail-container" {...otherProps}>
-      {isBeingEdited ? <h2>Edit Task</h2> : <ToDoDetailTaskContent selectedTask={selectedTask} handleOnEditClick={handleOnEditClick} />}
+      {
+        isBeingEdited
+        ? <h2>Edit Task</h2>
+        : <ToDoDetailTaskContent selectedTask={selectedTask} handleOnEditClick={handleOnEditClick} />
+      }
     </ToDoDetailContainer>
   );
 }
