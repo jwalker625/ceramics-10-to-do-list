@@ -4,11 +4,11 @@ import './ToDoDetail.css';
 
 type ToDoDetailProps = {
   isNewTask?: boolean,
-  selectedTask: {
+  selectedTask?: {
     title: string,
     description: string,
     deadline?: Date
-  } | undefined
+  }
 } & React.ComponentProps<'div'>;
 
 const ToDoDetailContainer = (props: React.ComponentProps<'div'>) => {
