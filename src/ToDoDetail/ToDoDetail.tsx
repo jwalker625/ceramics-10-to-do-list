@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import './ToDoDetail.css';
+import { format } from 'date-fns';
 
 type ToDoDetailProps = {
   isNewTask?: boolean,
@@ -9,6 +10,15 @@ type ToDoDetailProps = {
     description?: string,
     deadline?: Date
   }
+} & React.ComponentProps<'div'>;
+
+type ToDoDetailTasContentProps = {
+  selectedTask: {
+    title: string,
+    description?: string,
+    deadline?: Date
+  },
+  handleOnEditClick: () => void
 } & React.ComponentProps<'div'>;
 
 const ToDoDetailContainer = (props: React.ComponentProps<'div'>) => {
@@ -21,8 +31,27 @@ const ToDoDetailContainer = (props: React.ComponentProps<'div'>) => {
   );
 }
 
+const ToDoDetailTaskContent = (props: ToDoDetailTasContentProps) => {
+  const { className, selectedTask, handleOnEditClick, ...otherProps } = props;
+
+  const formattedDeadline = selectedTask.deadline ? format(selectedTask.deadline, "h':'mmaaa 'on' MMM d',' y") : '';
+
+  return (
+    <>
+      <h2>Task Detail</h2>
+      <div>Title: {selectedTask.title}</div>
+      <div>Description: {selectedTask.description || ''}</div>
+      <div>Deadline: {formattedDeadline}</div>
+      <div>
+        <button onClick={handleOnEditClick}>Edit</button>
+      </div>
+    </>
+);
+}
+
 const ToDoDetail = (props: ToDoDetailProps) => {
   const { isNewTask, selectedTask, ...otherProps } = props;
+  const [isBeingEdited, setIsBeingEdited] = React.useState(false);
 
   if(isNewTask) {
     return (
@@ -40,9 +69,13 @@ const ToDoDetail = (props: ToDoDetailProps) => {
     );
   }
 
+  const handleOnEditClick = () => {
+    setIsBeingEdited(true);
+  }
+
   return (
-    <ToDoDetailContainer {...otherProps}>
-      <h2>Add New Task</h2>
+    <ToDoDetailContainer data-testid="to-do-detail-container" {...otherProps}>
+      {isBeingEdited ? <h2>Edit Task</h2> : <ToDoDetailTaskContent selectedTask={selectedTask} handleOnEditClick={handleOnEditClick} />}
     </ToDoDetailContainer>
   );
 }
