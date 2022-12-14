@@ -6,7 +6,7 @@ type ToDoDetailProps = {
   isNewTask?: boolean,
   selectedTask?: {
     title: string,
-    description: string,
+    description?: string,
     deadline?: Date
   }
 } & React.ComponentProps<'div'>;
@@ -22,7 +22,7 @@ const ToDoDetailContainer = (props: React.ComponentProps<'div'>) => {
 }
 
 const ToDoDetail = (props: ToDoDetailProps) => {
-  const { isNewTask, selectedTask, className, ...otherProps } = props;
+  const { isNewTask, selectedTask, ...otherProps } = props;
 
   if(isNewTask) {
     return (
